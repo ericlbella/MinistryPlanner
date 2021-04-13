@@ -34,6 +34,9 @@ namespace MinistryPlanner.WebMVC.Models
         }
 
         public DbSet<Individual> Individuals { get; set; }
+        public DbSet<Pastor> Pastors { get; set; }
+        public DbSet<Parishoner> Parishoners { get; set; }
+        public DbSet<Visitor> Visitors { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
