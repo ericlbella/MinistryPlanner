@@ -5,8 +5,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using MinistryPlanner.Data;
 
-namespace MinistryPlanner.WebMVC.Models
+namespace MinistryPlanner.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -28,12 +29,13 @@ namespace MinistryPlanner.WebMVC.Models
         }
         
 
-    public static ApplicationDbContext Create()
+        public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        public DbSet<Individual> Individuals { get; set; }
+        public DbSet<Church> Churches { get; set; }
+        //public DbSet<Individual> Individuals { get; set; }
         public DbSet<Pastor> Pastors { get; set; }
         public DbSet<Parishoner> Parishoners { get; set; }
         public DbSet<Visitor> Visitors { get; set; }
