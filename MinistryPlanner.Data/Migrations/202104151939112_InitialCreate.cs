@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Migration1 : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
@@ -14,10 +14,11 @@
                         ChurchId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 20),
                         NumberMembers = c.Int(nullable: false),
+                        Phone = c.String(),
                         Email = c.String(),
-                        Address = c.String(),
-                        City = c.String(),
-                        Zip = c.String(),
+                        Address = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                        Zip = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })

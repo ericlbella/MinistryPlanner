@@ -5,17 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MinistryPlanner.Data
+namespace MinistryPlanner.Models
 {
-    public class Church
+    public class ChurchCreate
     {
-        [Key]
-        public int ChurchId { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
         public string Name { get; set; }
-        public enum Denomination { Baptist, Ctholic, Christian, Episcopal, Lutheran, Methodist, Orthodox, Presbyterian, Reformed, SpiritFilled }
+        public enum Denomination { Baptist, Catholic, Christian, Episcopal, Lutheran, Methodist, Orthodox, Presbyterian, Reformed, SpiritFilled }
         public int NumberMembers { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -32,7 +30,5 @@ namespace MinistryPlanner.Data
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         public string Zip { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }
