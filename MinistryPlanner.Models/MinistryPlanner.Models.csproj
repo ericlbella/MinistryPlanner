@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="ChurchListItem.cs" />
     <Compile Include="IndividualListItem.cs" />
+    <Compile Include="PastorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
