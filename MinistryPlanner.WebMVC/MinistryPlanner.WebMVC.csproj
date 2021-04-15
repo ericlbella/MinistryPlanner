@@ -248,6 +248,7 @@
     <Content Include="Views\Parishoner\Index.cshtml" />
     <Content Include="Views\Visitor\Index.cshtml" />
     <Content Include="Views\Church\Create.cshtml" />
+    <Content Include="Views\Pastor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

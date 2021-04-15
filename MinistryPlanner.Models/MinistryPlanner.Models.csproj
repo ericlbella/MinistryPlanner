@@ -57,10 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChurchCreate.cs" />
-    <Compile Include="ChurchListItem.cs" />
+    <Compile Include="Church\ChurchCreate.cs" />
+    <Compile Include="Church\ChurchListItem.cs" />
     <Compile Include="IndividualListItem.cs" />
     <Compile Include="ParishonerListItem.cs" />
+    <Compile Include="PastorCreate.cs" />
     <Compile Include="PastorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VisitorListItem.cs" />

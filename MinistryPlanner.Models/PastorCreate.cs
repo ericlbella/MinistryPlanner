@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MinistryPlanner.Data
+namespace MinistryPlanner.Models
 {
-    public abstract class Individual
+    public class PastorCreate
     {
-        [Key]
-        public int IndividualId { get; set; }
-        [ForeignKey("Church")]
-        public int ChurchId { get; set; }
-        public virtual Church Church { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         public string FirstName { get; set; }
@@ -42,26 +36,12 @@ namespace MinistryPlanner.Data
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         public string Zip { get; set; }
-        public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? ModifiedUtc { get; set; }
-
-
-        public Individual() { }
-        public Individual(string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc) 
-        {
-            FirstName = firstName;
-            MiddleName = middleName;
-            LastName = lastName;
-            Email = email;
-            HomePhone = HomePhone;
-            CellPhone = cellPhone;
-            DateOfBirth = DateOfBirth;
-            Address = address;
-            City = city;
-            State = state;
-            Zip = zip;
-            CreatedUtc = createdUtc;
-            ModifiedUtc = modifiedUtc;
-        }
+        public bool SeniorPastor { get; set; }
+        [Required]
+        public bool AssistantPastor { get; set; }
+        [Required]
+        public bool YouthPastor { get; set; }
+        [Required]
+        public bool SongLeader { get; set; }
     }
 }

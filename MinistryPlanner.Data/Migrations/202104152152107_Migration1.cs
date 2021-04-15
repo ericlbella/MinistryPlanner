@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Migration1 : DbMigration
     {
         public override void Up()
         {
@@ -16,9 +16,9 @@
                         NumberMembers = c.Int(nullable: false),
                         Phone = c.String(),
                         Email = c.String(),
-                        Address = c.String(nullable: false),
-                        City = c.String(nullable: false),
-                        Zip = c.String(nullable: false),
+                        Address = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 20),
+                        Zip = c.String(nullable: false, maxLength: 10),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
@@ -39,10 +39,10 @@
                         HomePhone = c.String(),
                         CellPhone = c.String(),
                         DateOfBirth = c.DateTime(nullable: false),
-                        Address = c.String(nullable: false, maxLength: 50),
-                        City = c.String(nullable: false, maxLength: 30),
+                        Address = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 20),
                         State = c.String(nullable: false, maxLength: 20),
-                        Zip = c.String(nullable: false, maxLength: 20),
+                        Zip = c.String(nullable: false, maxLength: 10),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
@@ -67,10 +67,10 @@
                         HomePhone = c.String(),
                         CellPhone = c.String(),
                         DateOfBirth = c.DateTime(nullable: false),
-                        Address = c.String(nullable: false, maxLength: 50),
-                        City = c.String(nullable: false, maxLength: 30),
+                        Address = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 20),
                         State = c.String(nullable: false, maxLength: 20),
-                        Zip = c.String(nullable: false, maxLength: 20),
+                        Zip = c.String(nullable: false, maxLength: 10),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
@@ -162,10 +162,10 @@
                         HomePhone = c.String(),
                         CellPhone = c.String(),
                         DateOfBirth = c.DateTime(nullable: false),
-                        Address = c.String(nullable: false, maxLength: 50),
-                        City = c.String(nullable: false, maxLength: 30),
+                        Address = c.String(nullable: false, maxLength: 30),
+                        City = c.String(nullable: false, maxLength: 20),
                         State = c.String(nullable: false, maxLength: 20),
-                        Zip = c.String(nullable: false, maxLength: 20),
+                        Zip = c.String(nullable: false, maxLength: 10),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })

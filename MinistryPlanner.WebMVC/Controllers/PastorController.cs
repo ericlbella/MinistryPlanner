@@ -16,5 +16,21 @@ namespace MinistryPlanner.WebMVC.Controllers
             var model = new PastorListItem[0];
             return View(model);
         }
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(PastorCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
+
     }
 }
