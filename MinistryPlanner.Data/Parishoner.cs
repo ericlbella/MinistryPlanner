@@ -18,13 +18,17 @@ namespace MinistryPlanner.Data
         [Required]
         public bool Officer { get; set; }
         public string OfficerTitle { get; set; }
+       
+
         public Parishoner() { }
-        public Parishoner(bool officer, string officerTitle, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip)
-            : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip)
+        public Parishoner(bool officer, string officerTitle, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
+            : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip, createdUtc, modifiedUtc)
         {
             Officer = officer;
             OfficerTitle = officerTitle;
-        }
+            CreatedUtc = createdUtc;
+            ModifiedUtc = modifiedUtc;
+    }
     }
 
 }

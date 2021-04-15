@@ -18,10 +18,12 @@ namespace MinistryPlanner.Data
         [Required]
         public DateTime DateVisited { get; set; }
         public Visitor() { }
-        public Visitor(DateTime dateVisited, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip)
-            : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip)
+        public Visitor(DateTime dateVisited, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
+            : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip, createdUtc, modifiedUtc)
         {
             DateVisited = dateVisited;
+            CreatedUtc = createdUtc;
+            ModifiedUtc = modifiedUtc;
         }
     }
 }

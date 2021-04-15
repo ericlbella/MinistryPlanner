@@ -39,9 +39,12 @@ namespace MinistryPlanner.Data
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         public string Zip { get; set; }
+        public DateTimeOffset CreatedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
+
 
         public Individual() { }
-        public Individual(string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip) 
+        public Individual(string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc) 
         {
             FirstName = firstName;
             MiddleName = middleName;
@@ -54,6 +57,8 @@ namespace MinistryPlanner.Data
             City = city;
             State = state;
             Zip = zip;
+            CreatedUtc = createdUtc;
+            ModifiedUtc = modifiedUtc;
         }
     }
 }

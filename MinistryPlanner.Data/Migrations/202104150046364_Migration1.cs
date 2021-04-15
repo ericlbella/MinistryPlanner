@@ -14,6 +14,12 @@
                         ChurchId = c.Int(nullable: false, identity: true),
                         Name = c.String(nullable: false, maxLength: 20),
                         NumberMembers = c.Int(nullable: false),
+                        Email = c.String(),
+                        Address = c.String(),
+                        City = c.String(),
+                        Zip = c.String(),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.ChurchId);
             
@@ -34,7 +40,10 @@
                         DateOfBirth = c.DateTime(nullable: false),
                         Address = c.String(nullable: false, maxLength: 50),
                         City = c.String(nullable: false, maxLength: 30),
+                        State = c.String(nullable: false, maxLength: 20),
                         Zip = c.String(nullable: false, maxLength: 20),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.IndividualId)
                 .ForeignKey("dbo.Church", t => t.ChurchId, cascadeDelete: true)
@@ -59,7 +68,10 @@
                         DateOfBirth = c.DateTime(nullable: false),
                         Address = c.String(nullable: false, maxLength: 50),
                         City = c.String(nullable: false, maxLength: 30),
+                        State = c.String(nullable: false, maxLength: 20),
                         Zip = c.String(nullable: false, maxLength: 20),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.IndividualId)
                 .ForeignKey("dbo.Church", t => t.ChurchId, cascadeDelete: true)
@@ -151,7 +163,10 @@
                         DateOfBirth = c.DateTime(nullable: false),
                         Address = c.String(nullable: false, maxLength: 50),
                         City = c.String(nullable: false, maxLength: 30),
+                        State = c.String(nullable: false, maxLength: 20),
                         Zip = c.String(nullable: false, maxLength: 20),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.IndividualId)
                 .ForeignKey("dbo.Church", t => t.ChurchId, cascadeDelete: true)

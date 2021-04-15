@@ -13,7 +13,7 @@ namespace MinistryPlanner.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104132348469_Migration1"; }
+            get { return "202104150046364_Migration1"; }
         }
         
         string IMigrationMetadata.Source
