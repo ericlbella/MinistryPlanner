@@ -16,5 +16,26 @@ namespace MinistryPlanner.WebMVC.Controllers
             var model = new VisitorListItem[0];
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(VisitorCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+        }
+
+
+
+
+
     }
 }
