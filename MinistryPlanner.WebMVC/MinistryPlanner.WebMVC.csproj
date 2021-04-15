@@ -175,6 +175,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndividualController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ParishonerController.cs" />
     <Compile Include="Controllers\PastorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,6 +244,7 @@
     <Content Include="Views\Church\Index.cshtml" />
     <Content Include="Views\Individual\Index.cshtml" />
     <Content Include="Views\Pastor\Index.cshtml" />
+    <Content Include="Views\Parishoner\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,10 +1,10 @@
-﻿@model IEnumerable<MinistryPlanner.Models.IndividualListItem>
+﻿@model IEnumerable<MinistryPlanner.Models.ParishonerListItem>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Individual List</h2>
+<h2>Parishoner List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,16 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IndividualId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.FirsName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MiddleName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Officer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficerTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
@@ -32,10 +35,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IndividualId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
+            @Html.DisplayFor(modelItem => item.FirsName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MiddleName)
@@ -44,7 +44,10 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
+            @Html.DisplayFor(modelItem => item.Officer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfficerTitle)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
