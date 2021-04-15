@@ -12,11 +12,11 @@ namespace MinistryPlanner.Models
         public string FirsName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
-        [Display(Name = "Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
         public bool SeniorPastor { get; set; }
         public bool AssistantPastor { get; set; }
         public bool YouthPastor { get; set; }
         public bool SongLeader { get; set; }
+        [Display(Name = "Created")]
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }

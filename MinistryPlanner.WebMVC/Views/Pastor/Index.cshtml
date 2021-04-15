@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Pastor List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -21,9 +21,6 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.SeniorPastor)
         </th>
         <th>
@@ -34,6 +31,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SongLeader)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
         <th></th>
     </tr>
