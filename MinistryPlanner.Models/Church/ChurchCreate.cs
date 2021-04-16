@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinistryPlanner.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace MinistryPlanner.Models
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
         public string Name { get; set; }
-        public enum Denomination { Baptist, Catholic, Christian, Episcopal, Lutheran, Methodist, Orthodox, Presbyterian, Reformed, SpiritFilled }
+        
         public int NumberMembers { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -25,10 +26,11 @@ namespace MinistryPlanner.Models
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
         public string City { get; set; }
-        public enum State { AK, AL, AR, AS, AZ, CA, CO, CT, DC, DE, FL, GA, GU, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MP, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, PR, RI, SC, SD, TN, TX, UM, UT, VA, VI, VT, WA, WI, WV, WY }
+        public State StateOfChurch { get; set; }
         [Required]
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         public string Zip { get; set; }
+        public Denomination DenominationOfChurch { get; set; }
     }
 }

@@ -65,12 +65,18 @@
     <Compile Include="Pastor\PastorCreate.cs" />
     <Compile Include="Pastor\PastorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VisitorCreate.cs" />
-    <Compile Include="VisitorListItem.cs" />
+    <Compile Include="Visitor\VisitorCreate.cs" />
+    <Compile Include="Visitor\VisitorListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinistryPlanner.Data\MinistryPlanner.Data.csproj">
+      <Project>{1d539b77-34ce-458c-bc72-63bdefe34786}</Project>
+      <Name>MinistryPlanner.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
