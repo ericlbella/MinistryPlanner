@@ -1,4 +1,6 @@
-﻿using MinistryPlanner.Models;
+﻿using Microsoft.AspNet.Identity;
+using MinistryPlanner.Models;
+using MinistryPlanner.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,11 @@ namespace MinistryPlanner.WebMVC.Controllers
         // GET: Church
         public ActionResult Index()
         {
-            var model = new ChurchListItem[0];
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            //var service = new ChurchService(userId);
+            var service = new ChurchService();
+            var model = service.GetChurches();
+
             return View(model);
         }
 
@@ -26,12 +32,17 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ChurchCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
 
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            //var service = new ChurchService(userId);
+            var service = new ChurchService();
+            service.CreateChurch(model);
+
+            return RedirectToAction("Index");
         }
     }
 }

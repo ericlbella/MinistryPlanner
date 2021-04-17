@@ -12,8 +12,6 @@ namespace MinistryPlanner.Data
         [Key]
         public int ChurchId { get; set; }
         [Required]
-        public Guid OwnerId { get; set; }
-        [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
         public string Name { get; set; }

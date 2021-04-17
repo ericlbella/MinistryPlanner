@@ -8,20 +8,21 @@ using System.Threading.Tasks;
 
 namespace MinistryPlanner.Services
 {
-    class ChurchService
+    public class ChurchService
     {
-        private readonly Guid _userId;
+        //private readonly Guid _userId;
 
-        public ChurchService(Guid userId)
-        {
-            _userId = userId;
-        }
+        //public ChurchService(Guid userId)
+        //{
+        //    _userId = userId;
+        //}
 
         public bool CreateChurch(ChurchCreate model)
         {
             var entity =
                 new Church()
                 {
+                    //OwnerId = _userId,
                     Name = model.Name,
                     NumberMembers = model.NumberMembers,
                     Phone = model.Phone,
@@ -48,7 +49,7 @@ namespace MinistryPlanner.Services
                 var query =
                     ctx
                         .Churches
-                        .Where(e => e.OwnerId == _userId)
+                        //.Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
                                 new ChurchListItem

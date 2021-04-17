@@ -60,6 +60,11 @@
     <Compile Include="Church.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Individual.cs" />
+    <Compile Include="Migrations\202104170004207_Migration1.cs" />
+    <Compile Include="Migrations\202104170004207_Migration1.designer.cs">
+      <DependentUpon>202104170004207_Migration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Parishoner.cs" />
     <Compile Include="Pastor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,6 +73,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104170004207_Migration1.resx">
+      <DependentUpon>202104170004207_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
