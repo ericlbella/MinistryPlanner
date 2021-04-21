@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChurchService.cs" />
+    <Compile Include="ParishonerService.cs" />
     <Compile Include="PastorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

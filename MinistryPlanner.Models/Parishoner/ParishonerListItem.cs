@@ -9,7 +9,7 @@ namespace MinistryPlanner.Models
 {
     public class ParishonerListItem
     {
-        public string FirsName { get; set; }
+        public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public bool Officer { get; set; }

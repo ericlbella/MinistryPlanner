@@ -4,11 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace MinistryPlanner.Models
 {
     public class ParishonerCreate
     {
+        [Display(Name = "Church Name")]
+        public int ChurchId { get; set; }
+        public List<SelectListItem> Churches { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         public string FirstName { get; set; }

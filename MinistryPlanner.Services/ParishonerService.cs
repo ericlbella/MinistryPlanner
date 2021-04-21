@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 
 namespace MinistryPlanner.Services
 {
-    public class PastorService
+    public class ParishonerService
     {
-        //private readonly Guid _userId;
-
-        ////public PastorService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
-        public bool CreatePastor(PastorCreate model)
+        public bool CreateParishoner(ParishonerCreate model)
         {
             var entity =
-                new Pastor()
+                new Parishoner()
                 {
                     ChurchId = model.ChurchId,
                     FirstName = model.FirstName,
@@ -33,38 +27,34 @@ namespace MinistryPlanner.Services
                     City = model.City,
                     State = model.State,
                     Zip = model.Zip,
-                    SeniorPastor = model.SeniorPastor,
-                    AssistantPastor = model.AssistantPastor,
-                    YouthPastor = model.YouthPastor,
-                    SongLeader = model.SongLeader,
+                    Officer = model.Officer,
+                    OfficerTitle = model.OfficerTitle,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Pastors.Add(entity);
+                ctx.Parishoners.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<PastorListItem> GetPastors()
+        public IEnumerable<ParishonerListItem> GetParishoners()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Pastors
+                        .Parishoners
                         //.Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new PastorListItem
+                                new ParishonerListItem
                                 {
                                     FirstName = e.FirstName,
                                     MiddleName = e.MiddleName,
                                     LastName = e.LastName,
-                                    SeniorPastor = e.SeniorPastor,
-                                    AssistantPastor = e.AssistantPastor,
-                                    YouthPastor = e.YouthPastor,
-                                    SongLeader = e.SongLeader,
+                                    Officer = e.Officer,
+                                    OfficerTitle = e.OfficerTitle,
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
