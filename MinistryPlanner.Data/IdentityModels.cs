@@ -28,7 +28,6 @@ namespace MinistryPlanner.Data
         {
         }
         
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

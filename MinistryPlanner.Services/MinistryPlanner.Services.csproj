@@ -61,6 +61,7 @@
     <Compile Include="ParishonerService.cs" />
     <Compile Include="PastorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisitorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

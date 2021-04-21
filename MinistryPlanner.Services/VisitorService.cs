@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace MinistryPlanner.Services
 {
-    public class ParishonerService
+    public class VisitorService
     {
-        public bool CreateParishoner(ParishonerCreate model)
+        public bool CreateVisitor(VisitorCreate model)
         {
             var entity =
-                new Parishoner()
+                new Visitor()
                 {
                     ChurchId = model.ChurchId,
                     FirstName = model.FirstName,
@@ -27,36 +27,34 @@ namespace MinistryPlanner.Services
                     City = model.City,
                     State = model.State,
                     Zip = model.Zip,
-                    Officer = model.Officer,
-                    OfficerTitle = model.OfficerTitle,
+                    DateVisited = model.DateVisited,
                     CreatedUtc = DateTimeOffset.Now
 
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Parishoners.Add(entity);
+                ctx.Visitors.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<ParishonerListItem> GetParishoners()
+        public IEnumerable<VisitorListItem> GetVisitors()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Parishoners
+                        .Visitors
                         //.Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new ParishonerListItem
+                                new VisitorListItem
                                 {
                                     FirstName = e.FirstName,
                                     MiddleName = e.MiddleName,
                                     LastName = e.LastName,
-                                    Officer = e.Officer,
-                                    OfficerTitle = e.OfficerTitle,
+                                    DateVisited = e.DateVisited,
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
@@ -66,3 +64,4 @@ namespace MinistryPlanner.Services
         }
     }
 }
+
