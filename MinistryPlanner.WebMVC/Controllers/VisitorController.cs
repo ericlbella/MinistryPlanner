@@ -1,4 +1,6 @@
-﻿using MinistryPlanner.Models;
+﻿using MinistryPlanner.Data;
+using MinistryPlanner.Models;
+using MinistryPlanner.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +12,26 @@ namespace MinistryPlanner.WebMVC.Controllers
     [Authorize]
     public class VisitorController : Controller
     {
+        ApplicationDbContext DbContext = new ApplicationDbContext();
+
         // GET: Visitor
         public ActionResult Index()
         {
-            var model = new VisitorListItem[0];
+            var service = new VisitorService();
+            var model = service.GetVisitors();
+
             return View(model);
         }
 
         public ActionResult Create()
         {
+            var service = new ChurchService();
+            var model = service.GetChurches();
+
+            ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
+            var model2 = new VisitorCreate();
+            //model2.Churches = model;       
+            //foreach (int value in     in 
             return View();
         }
 
@@ -26,11 +39,15 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(VisitorCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var service = new VisitorService();
+            service.CreateVisitor(model);
+
+            return RedirectToAction("Index");
         }
 
 

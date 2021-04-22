@@ -32,17 +32,25 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ChurchCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
             //var userId = Guid.Parse(User.Identity.GetUserId());
             //var service = new ChurchService(userId);
-            var service = new ChurchService();
-            service.CreateChurch(model);
+            var service = CreateChurchService();
 
-            return RedirectToAction("Index");
+            if (service.CreateChurch(model))
+            {
+                TempData["SaveResult"] = "Your church record was created.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Church record could not be created.");
+
+            return View(model);
+        }
+
+        private static ChurchService CreateChurchService()
+        {
+            return new ChurchService();
         }
     }
 }

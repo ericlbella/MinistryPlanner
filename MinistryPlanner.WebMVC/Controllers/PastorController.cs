@@ -9,9 +9,6 @@ using System.Web.Mvc;
 
 namespace MinistryPlanner.WebMVC.Controllers
 {
-
-    
-
     [Authorize]
     public class PastorController : Controller
     {
@@ -33,10 +30,7 @@ namespace MinistryPlanner.WebMVC.Controllers
 
             ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
             var model2 = new PastorCreate();
-            //model2.Churches = model;
-
-            
-
+            //model2.Churches = model;       
             //foreach (int value in     in 
             return View();
         }
