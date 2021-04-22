@@ -39,16 +39,23 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PastorCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreatePastorService();
+
+            if (service.CreatePastor(model))
             {
-                return View(model);
+                TempData["SaveResult"] = "Your pastor record was created.";
+                return RedirectToAction("Index");
             }
 
-            var service = new PastorService();
-            service.CreatePastor(model);
-
-            return RedirectToAction("Index");
+            ModelState.AddModelError("", "Pastor record could not be created.");
+            return View(model);
         }
 
+        private static PastorService CreatePastorService()
+        {
+            return new PastorService();
+        }
     }
 }
