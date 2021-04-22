@@ -63,5 +63,31 @@ namespace MinistryPlanner.Services
                 return query.ToArray();
             }
         }
+
+        public ChurchDetail GetChurchById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Churches
+                        .Single(e => e.ChurchId == id);
+                return
+                    new ChurchDetail
+                    {
+                        ChurchId = entity.ChurchId,
+                        Name = entity.Name,
+                        NumberMembers = entity.NumberMembers,
+                        Phone = entity.Phone,
+                        Email = entity.Email,
+                        City = entity.City,
+                        StateOfChurch = entity.StateOfChurch,
+                        Zip = entity.Zip,
+                        DenominationOfChurch = entity.DenominationOfChurch,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
     }
 }

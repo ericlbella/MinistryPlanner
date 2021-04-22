@@ -47,11 +47,21 @@ namespace MinistryPlanner.WebMVC.Controllers
 
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var svc = CreateChurchService();
+            var model = svc.GetChurchById(id);
+
+            return View(model);
+        }
+
 
         private static ChurchService CreateChurchService()
         {
             return new ChurchService();
         }
+
+       
     }
 }
 
