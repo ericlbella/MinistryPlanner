@@ -39,20 +39,24 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(VisitorCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateVisitorService();
+
+            if (service.CreateVisitor(model))
             {
-                return View(model);
-            }
+                TempData["SaveResult"] = "Your visitor record was created.";
+                return RedirectToAction("Index");
+            };
 
-            var service = new VisitorService();
-            service.CreateVisitor(model);
+            ModelState.AddModelError("", "Visitor record could not be created.");
 
-            return RedirectToAction("Index");
+            return View(model);
         }
 
-
-
-
-
+        private static VisitorService CreateVisitorService()
+        {
+            return new VisitorService();
+        }
     }
 }
