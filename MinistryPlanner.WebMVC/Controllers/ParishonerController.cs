@@ -22,7 +22,23 @@ namespace MinistryPlanner.WebMVC.Controllers
             var model = service.GetParishoners();
             //var model = new ParishonerListItem[0];
             return View(model);
+
         }
+
+        //private static ParishonerService NewMethod1()
+        //{
+        //    return CreateParishonerService();
+        //}
+
+        private static ParishonerService CreateParishonerService()
+        {
+            return new ParishonerService();
+        }
+
+        //private static ParishonerService NewMethod()
+        //{
+        //    return new ParishonerService();
+        //}
 
         public ActionResult Create()
         {
@@ -40,15 +56,18 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ParishonerCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateParishonerService();
+
+            if (service.CreateParishoner(model))
             {
-                return View(model);
+                TempData["SaveResult"] = "Your parishoner record was created.";
+                return RedirectToAction("Index");
             }
 
-            var service = new ParishonerService();
-            service.CreateParishoner(model);
-
-            return RedirectToAction("Index");
+            ModelState.AddModelError("", "Parishoner record could not be created.");
+            return View(model);
         }
     }
 }
