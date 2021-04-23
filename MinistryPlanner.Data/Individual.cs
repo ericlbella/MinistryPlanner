@@ -36,8 +36,9 @@ namespace MinistryPlanner.Data
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
         public string City { get; set; }
         [Required]
-        [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
-        public string State { get; set; }
+        //[MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
+        //public State StateOfChurch { get; set; }
+        public State State { get; set; }
         [Required]
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
@@ -47,7 +48,7 @@ namespace MinistryPlanner.Data
 
 
         public Individual() { }
-        public Individual(string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc) 
+        public Individual(string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, State state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc) 
         {
             FirstName = firstName;
             MiddleName = middleName;

@@ -64,6 +64,22 @@
     <Compile Include="Migrations\202104170004207_Migration1.designer.cs">
       <DependentUpon>202104170004207_Migration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104231645340_UpdatingState.cs" />
+    <Compile Include="Migrations\202104231645340_UpdatingState.designer.cs">
+      <DependentUpon>202104231645340_UpdatingState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231720068_UpdatedPastorClass.cs" />
+    <Compile Include="Migrations\202104231720068_UpdatedPastorClass.designer.cs">
+      <DependentUpon>202104231720068_UpdatedPastorClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231845579_StateOfChurchToState.cs" />
+    <Compile Include="Migrations\202104231845579_StateOfChurchToState.designer.cs">
+      <DependentUpon>202104231845579_StateOfChurchToState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231911184_UpdatedState.cs" />
+    <Compile Include="Migrations\202104231911184_UpdatedState.designer.cs">
+      <DependentUpon>202104231911184_UpdatedState.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Parishoner.cs" />
     <Compile Include="Pastor.cs" />
@@ -77,6 +93,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202104170004207_Migration1.resx">
       <DependentUpon>202104170004207_Migration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231645340_UpdatingState.resx">
+      <DependentUpon>202104231645340_UpdatingState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231720068_UpdatedPastorClass.resx">
+      <DependentUpon>202104231720068_UpdatedPastorClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231845579_StateOfChurchToState.resx">
+      <DependentUpon>202104231845579_StateOfChurchToState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231911184_UpdatedState.resx">
+      <DependentUpon>202104231911184_UpdatedState.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

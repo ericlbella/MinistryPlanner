@@ -15,9 +15,9 @@ namespace MinistryPlanner.WebMVC.Controllers
         // GET: Church
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = Convert.ToString(User.Identity.GetUserId());
             //var service = new ChurchService(userId);
-            var service = new ChurchService();
+            var service = new ChurchService(userId);
             var model = service.GetChurches();
 
             return View(model);
@@ -55,10 +55,13 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
-
-        private static ChurchService CreateChurchService()
+        private ChurchService CreateChurchService()
         {
-            return new ChurchService();
+            var userId = Convert.ToString(User.Identity.GetUserId());
+            //var userId = Convert.ToInt32(User.Identity.GetUserId());
+            //var service = new ChurchService(userId);
+            var service = new ChurchService(userId);
+            return service;
         }
 
        

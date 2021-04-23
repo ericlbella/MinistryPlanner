@@ -25,9 +25,10 @@ namespace MinistryPlanner.Data
         public bool SongLeader { get; set; }
 
         public Pastor() { }
-        public Pastor(bool seniorPastor, bool assistantPastor, bool youthPastor, bool songLeader, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
+        public Pastor(bool seniorPastor, bool assistantPastor, bool youthPastor, bool songLeader, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, State state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
             : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip, createdUtc, modifiedUtc)
         {
+            State = state;
             SeniorPastor = seniorPastor;
             AssistantPastor = assistantPastor;
             YouthPastor = youthPastor;

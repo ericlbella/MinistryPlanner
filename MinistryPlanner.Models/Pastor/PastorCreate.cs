@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinistryPlanner.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -34,8 +35,8 @@ namespace MinistryPlanner.Models
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
         public string City { get; set; }
         [Required]
-        [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
-        public string State { get; set; }
+        //[MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
+        public State State { get; set; }
         [Required]
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]

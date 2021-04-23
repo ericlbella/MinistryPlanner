@@ -10,26 +10,26 @@ namespace MinistryPlanner.Services
 {
     public class ChurchService
     {
-        //private readonly Guid _userId;
+        private readonly string _userId;
 
-        //public ChurchService(Guid userId)
-        //{
-        //    _userId = userId;
-        //}
+        public ChurchService(string userId)
+        {
+            _userId = userId;
+        }
 
         public bool CreateChurch(ChurchCreate model)
         {
             var entity =
                 new Church()
                 {
-                    //OwnerId = _userId,
+                    //ChurchId = _userId,
                     Name = model.Name,
                     NumberMembers = model.NumberMembers,
                     Phone = model.Phone,
                     Email = model.Email,
                     Address = model.Address,
                     City = model.City,
-                    StateOfChurch = model.StateOfChurch,
+                    State = model.State,
                     Zip = model.Zip,
                     DenominationOfChurch = model.DenominationOfChurch,
                     CreatedUtc = DateTimeOffset.Now
@@ -49,8 +49,11 @@ namespace MinistryPlanner.Services
                 var query =
                     ctx
                         .Churches
-                        //.Where(e => e.OwnerId == _userId)
-                        .Select(
+                        //.Where(e => e.ChurchId == _userId)
+                        .Where(e => e.ChurchId == e.ChurchId)
+
+
+                       .Select(
                             e =>
                                 new ChurchListItem
                                 {
@@ -81,7 +84,7 @@ namespace MinistryPlanner.Services
                         Phone = entity.Phone,
                         Email = entity.Email,
                         City = entity.City,
-                        StateOfChurch = entity.StateOfChurch,
+                        State = entity.State,
                         Zip = entity.Zip,
                         DenominationOfChurch = entity.DenominationOfChurch,
                         CreatedUtc = entity.CreatedUtc,

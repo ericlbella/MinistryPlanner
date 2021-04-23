@@ -31,7 +31,7 @@ namespace MinistryPlanner.Services
                     DateOfBirth = model.DateOfBirth,
                     Address = model.Address,
                     City = model.City,
-                    State = model.State,
+                    State = (State)model.State,
                     Zip = model.Zip,
                     SeniorPastor = model.SeniorPastor,
                     AssistantPastor = model.AssistantPastor,
@@ -72,5 +72,6 @@ namespace MinistryPlanner.Services
                 return query.ToArray();
             }
         }
+
     }
 }

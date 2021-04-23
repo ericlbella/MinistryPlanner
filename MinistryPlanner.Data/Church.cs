@@ -28,7 +28,7 @@ namespace MinistryPlanner.Data
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(5, ErrorMessage = "Please enter at least 5 characters.")]
         public string City { get; set; }
-        public State StateOfChurch { get; set; }
+        public State State { get; set; }
         [Required]
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]

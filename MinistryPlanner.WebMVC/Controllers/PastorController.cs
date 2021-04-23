@@ -12,7 +12,7 @@ namespace MinistryPlanner.WebMVC.Controllers
     [Authorize]
     public class PastorController : Controller
     {
-        ApplicationDbContext DbContext = new ApplicationDbContext();
+       private ApplicationDbContext DbContext = new ApplicationDbContext();
 
         // GET: Pastor
         public ActionResult Index()
@@ -25,11 +25,11 @@ namespace MinistryPlanner.WebMVC.Controllers
         
         public ActionResult Create()
         {
-            var service = new ChurchService();
-            var model = service.GetChurches();
-
+            //var service = new ChurchService();
+            //var model = service.GetChurches();
             ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
-            var model2 = new PastorCreate();
+            //ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
+           // var model2 = new PastorCreate();
             //model2.Churches = model;       
             //foreach (int value in     in 
             return View();

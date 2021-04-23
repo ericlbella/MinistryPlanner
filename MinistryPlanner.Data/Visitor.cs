@@ -17,8 +17,9 @@ namespace MinistryPlanner.Data
         //public virtual Church Church { get; set; }
         [Required]
         public DateTime DateVisited { get; set; }
+        //public string State { get; set; }
         public Visitor() { }
-        public Visitor(DateTime dateVisited, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, string state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
+        public Visitor(DateTime dateVisited, string firstName, string middleName, string lastName, string email, string homePhone, string cellPhone, DateTime dateOfBirth, string address, string city, State state, string zip, DateTimeOffset createdUtc, DateTimeOffset? modifiedUtc)
             : base(firstName, middleName, lastName, email, homePhone, cellPhone, dateOfBirth, address, city, state, zip, createdUtc, modifiedUtc)
         {
             DateVisited = dateVisited;
