@@ -80,10 +80,10 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.DenominationOfChurch, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Denomination, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.DenominationOfChurch, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DenominationOfChurch, "", new { @class = "text-danger" })
+            @Html.EnumDropDownListFor(model => model.Denomination, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Denomination, "", new { @class = "text-danger" })
         </div>
     </div>
 

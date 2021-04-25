@@ -52,6 +52,7 @@ namespace MinistryPlanner.Services
                             e =>
                                 new ParishonerListItem
                                 {
+                                    IndividualId = e.IndividualId,
                                     FirstName = e.FirstName,
                                     MiddleName = e.MiddleName,
                                     LastName = e.LastName,
@@ -63,6 +64,39 @@ namespace MinistryPlanner.Services
 
                 return query.ToArray();
             }
+        }
+
+        public ParishonerDetail GetParishonerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Parishoners
+                         .Single(e => e.IndividualId == id);
+                return
+                    new ParishonerDetail
+                    {
+                        IndividualId = entity.IndividualId,
+                        ChurchId = entity.ChurchId,
+                        FirstName = entity.FirstName,
+                        MiddleName = entity.MiddleName,
+                        LastName = entity.LastName,
+                        Email = entity.Email,
+                        HomePhone = entity.HomePhone,
+                        CellPhone = entity.CellPhone,
+                        DateOfBirth = entity.DateOfBirth,
+                        Address = entity.Address,
+                        City = entity.City,
+                        State = entity.State,
+                        Zip = entity.Zip,
+                        Officer = entity.Officer,
+                        OfficerTitle = entity.OfficerTitle,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+
         }
     }
 }

@@ -20,7 +20,7 @@
                         City = c.String(nullable: false, maxLength: 20),
                         StateOfChurch = c.Int(nullable: false),
                         Zip = c.String(nullable: false, maxLength: 10),
-                        DenominationOfChurch = c.Int(nullable: false),
+                        Denomination = c.Int(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })

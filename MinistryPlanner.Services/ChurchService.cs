@@ -31,7 +31,7 @@ namespace MinistryPlanner.Services
                     City = model.City,
                     State = model.State,
                     Zip = model.Zip,
-                    DenominationOfChurch = model.DenominationOfChurch,
+                    Denomination = model.Denomination,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -83,10 +83,11 @@ namespace MinistryPlanner.Services
                         NumberMembers = entity.NumberMembers,
                         Phone = entity.Phone,
                         Email = entity.Email,
+                        Address = entity.Address,
                         City = entity.City,
                         State = entity.State,
                         Zip = entity.Zip,
-                        DenominationOfChurch = entity.DenominationOfChurch,
+                        Denomination = entity.Denomination,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };

@@ -80,6 +80,10 @@
     <Compile Include="Migrations\202104231911184_UpdatedState.designer.cs">
       <DependentUpon>202104231911184_UpdatedState.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104240049552_DenominationPropertyUpdated.cs" />
+    <Compile Include="Migrations\202104240049552_DenominationPropertyUpdated.designer.cs">
+      <DependentUpon>202104240049552_DenominationPropertyUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Parishoner.cs" />
     <Compile Include="Pastor.cs" />
@@ -105,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104231911184_UpdatedState.resx">
       <DependentUpon>202104231911184_UpdatedState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104240049552_DenominationPropertyUpdated.resx">
+      <DependentUpon>202104240049552_DenominationPropertyUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

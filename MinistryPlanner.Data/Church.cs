@@ -33,7 +33,7 @@ namespace MinistryPlanner.Data
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         public string Zip { get; set; }
-        public Denomination DenominationOfChurch { get; set; }
+        public Denomination Denomination { get; set; }
         public DateTimeOffset CreatedUtc { get; set; }
         public DateTimeOffset? ModifiedUtc { get; set; }
         

@@ -30,10 +30,7 @@ namespace MinistryPlanner.WebMVC.Controllers
         //    return CreateParishonerService();
         //}
 
-        private static ParishonerService CreateParishonerService()
-        {
-            return new ParishonerService();
-        }
+        
 
         //private static ParishonerService NewMethod()
         //{
@@ -71,6 +68,19 @@ namespace MinistryPlanner.WebMVC.Controllers
 
             ModelState.AddModelError("", "Parishoner record could not be created.");
             return View(model);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateParishonerService();
+            var model = svc.GetParishonerById(id);
+
+            return View(model);
+        }
+
+        private static ParishonerService CreateParishonerService()
+        {
+            return new ParishonerService();
         }
     }
 }

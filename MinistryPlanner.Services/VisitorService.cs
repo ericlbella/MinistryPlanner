@@ -51,6 +51,7 @@ namespace MinistryPlanner.Services
                             e =>
                                 new VisitorListItem
                                 {
+                                    IndividualId = e.IndividualId,
                                     FirstName = e.FirstName,
                                     MiddleName = e.MiddleName,
                                     LastName = e.LastName,

@@ -58,6 +58,7 @@ namespace MinistryPlanner.Services
                             e =>
                                 new PastorListItem
                                 {
+                                    IndividualId = e.IndividualId,
                                     FirstName = e.FirstName,
                                     MiddleName = e.MiddleName,
                                     LastName = e.LastName,
