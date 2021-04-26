@@ -97,6 +97,37 @@ namespace MinistryPlanner.Services
             }
 
         }
+
+        public bool UpdateVisitor(VisitorEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Visitors
+                        .Single(e => e.IndividualId == model.IndividualId);
+
+                entity.ChurchId = model.ChurchId;
+                entity.FirstName = model.FirstName;
+                entity.MiddleName = model.MiddleName;
+                entity.LastName = model.LastName;
+                entity.Email = model.Email;
+                entity.HomePhone = model.HomePhone;
+                entity.CellPhone = model.CellPhone;
+                entity.DateOfBirth = model.DateOfBirth;
+                entity.Address = model.Address;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.Zip = model.Zip;
+                entity.DateVisited = model.DateVisited;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
     }
     
 }

@@ -62,6 +62,29 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateVisitorService();
+            var detail = service.GetVisitorById(id);
+            var model =
+                new VisitorEdit
+                {
+                    FirstName = detail.FirstName,
+                    MiddleName = detail.MiddleName,
+                    LastName = detail.LastName,
+                    Email = detail.Email,
+                    HomePhone = detail.HomePhone,
+                    CellPhone = detail.CellPhone,
+                    DateOfBirth = detail.DateOfBirth,
+                    Address = detail.Address,
+                    City = detail.City,
+                    State = detail.State,
+                    Zip = detail.Zip,
+                    DateVisited = detail.DateVisited
+                };
+            return View(model);
+        }
+
         private static VisitorService CreateVisitorService()
         {
             return new VisitorService();
