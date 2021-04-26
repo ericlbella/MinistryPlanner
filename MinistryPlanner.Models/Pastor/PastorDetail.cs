@@ -2,19 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MinistryPlanner.Models
 {
-    public class ParishonerDetail
+    public class PastorDetail
     {
-        //public int IndividualId { get; set; }
-        //[ForeignKey("Church")]
-        //public int ChurchId { get; set; }
-        //public virtual Church Church { get; set; }
         public string Name { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
@@ -44,8 +39,13 @@ namespace MinistryPlanner.Models
         [MaxLength(10, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         public string Zip { get; set; }
-        public bool Officer { get; set; }
-        public string OfficerTitle { get; set; }
+        public bool SeniorPastor { get; set; }
+        [Required]
+        public bool AssistantPastor { get; set; }
+        [Required]
+        public bool YouthPastor { get; set; }
+        [Required]
+        public bool SongLeader { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]

@@ -85,6 +85,7 @@
     <Compile Include="Parishoner\ParishonerDetial.cs" />
     <Compile Include="Parishoner\ParishonerCreate.cs" />
     <Compile Include="Parishoner\ParishonerListItem.cs" />
+    <Compile Include="Pastor\PastorDetail.cs" />
     <Compile Include="Pastor\PastorCreate.cs" />
     <Compile Include="Pastor\PastorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

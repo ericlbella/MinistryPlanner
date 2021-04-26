@@ -74,5 +74,40 @@ namespace MinistryPlanner.Services
             }
         }
 
+        public PastorDetail GetPastorById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                         .Pastors
+                         .Single(e => e.IndividualId == id);
+                return
+                    new PastorDetail
+                    {
+                        Name = entity.Church.Name,
+                        //IndividualId = entity.IndividualId,
+                        //ChurchId = entity.ChurchId,
+                        FirstName = entity.FirstName,
+                        MiddleName = entity.MiddleName,
+                        LastName = entity.LastName,
+                        Email = entity.Email,
+                        HomePhone = entity.HomePhone,
+                        CellPhone = entity.CellPhone,
+                        DateOfBirth = entity.DateOfBirth,
+                        Address = entity.Address,
+                        City = entity.City,
+                        State = entity.State,
+                        Zip = entity.Zip,
+                        SeniorPastor = entity.SeniorPastor,
+                        AssistantPastor = entity.AssistantPastor,
+                        YouthPastor = entity.YouthPastor,
+                        SongLeader = entity.SongLeader,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+
+        }
     }
 }

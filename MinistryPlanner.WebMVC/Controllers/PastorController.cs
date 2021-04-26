@@ -53,6 +53,9 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+
+
+
         private static PastorService CreatePastorService()
         {
             return new PastorService();
