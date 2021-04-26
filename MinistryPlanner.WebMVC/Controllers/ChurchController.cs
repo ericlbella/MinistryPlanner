@@ -55,6 +55,27 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateChurchService();
+            var detail = service.GetChurchById(id);
+            var model =
+                new ChurchEdit
+                {
+                    ChurchId = detail.ChurchId,
+                    Name = detail.Name,
+                    NumberMembers = detail.NumberMembers,
+                    Phone = detail.Phone,
+                    Email = detail.Email,
+                    Address = detail.Address,
+                    City = detail.City,
+                    State = detail.State,
+                    Zip = detail.Zip,
+                    Denomination = detail.Denomination
+                };
+            return View(model);
+        }
+
         private ChurchService CreateChurchService()
         {
             var userId = Convert.ToString(User.Identity.GetUserId());
@@ -63,8 +84,6 @@ namespace MinistryPlanner.WebMVC.Controllers
             var service = new ChurchService(userId);
             return service;
         }
-
-       
     }
 }
 

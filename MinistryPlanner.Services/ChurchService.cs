@@ -93,5 +93,32 @@ namespace MinistryPlanner.Services
                     };
             }
         }
+
+        public bool UpdateChurch(ChurchEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Churches
+                        .Single(e => e.ChurchId == model.ChurchId);
+
+                entity.ChurchId = model.ChurchId;
+                entity.Name = model.Name;
+                entity.NumberMembers = model.NumberMembers;
+                entity.Phone = model.Phone;
+                entity.Email = model.Email;
+                entity.Address = model.Address;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.Zip = model.Zip;
+                entity.Denomination = model.Denomination;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+                        
+            }
+        }
+
     }
 }
