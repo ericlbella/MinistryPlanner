@@ -61,6 +61,30 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePastorService();
+            var detail = service.GetPastorById(id);
+            var model =
+                new PastorEdit
+                {
+                    MiddleName = detail.MiddleName,
+                    LastName = detail.LastName,
+                    Email = detail.Email,
+                    HomePhone = detail.HomePhone,
+                    CellPhone = detail.CellPhone,
+                    DateOfBirth = detail.DateOfBirth,
+                    Address = detail.Address,
+                    City = detail.City,
+                    State = detail.State,
+                    Zip = detail.Zip,
+                    SeniorPastor = detail.SeniorPastor,
+                    AssistantPastor = detail.AssistantPastor,
+                    YouthPastor = detail.YouthPastor,
+                    SongLeader = detail.SongLeader
+                }; 
+            return View(model);
+            }
 
         private static PastorService CreatePastorService()
         {

@@ -78,7 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChurchEdit.cs" />
+    <Compile Include="Church\ChurchEdit.cs" />
     <Compile Include="Church\ChurchDetail.cs" />
     <Compile Include="Church\ChurchCreate.cs" />
     <Compile Include="Church\ChurchListItem.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Parishoner\ParishonerDetial.cs" />
     <Compile Include="Parishoner\ParishonerCreate.cs" />
     <Compile Include="Parishoner\ParishonerListItem.cs" />
+    <Compile Include="Pastor\PastorEdit.cs" />
     <Compile Include="Pastor\PastorDetail.cs" />
     <Compile Include="Pastor\PastorCreate.cs" />
     <Compile Include="Pastor\PastorListItem.cs" />

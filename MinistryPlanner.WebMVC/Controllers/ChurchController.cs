@@ -76,6 +76,30 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ChurchEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ChurchId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateChurchService();
+
+            if (service.UpdateChurch(model))
+            {
+                TempData["SaveResult"] = "Your church record was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your church record could not be updated.");
+            return View(model);
+        }
+
         private ChurchService CreateChurchService()
         {
             var userId = Convert.ToString(User.Identity.GetUserId());

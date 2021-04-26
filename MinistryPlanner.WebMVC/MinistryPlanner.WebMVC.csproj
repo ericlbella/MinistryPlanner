@@ -255,6 +255,7 @@
     <Content Include="Views\Parishoner\Details.cshtml" />
     <Content Include="Views\Pastor\Details.cshtml" />
     <Content Include="Views\Visitor\Details.cshtml" />
+    <Content Include="Views\Church\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

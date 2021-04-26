@@ -109,5 +109,38 @@ namespace MinistryPlanner.Services
             }
 
         }
+
+        public bool UpdatePastor(PastorEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Pastors
+                        .Single (e => e.IndividualId == model.IndividualId);
+
+                entity.FirstName = model.FirstName;
+                entity.MiddleName = model.MiddleName;
+                entity.LastName = model.LastName;
+                entity.Email = model.Email;
+                entity.HomePhone = model.HomePhone;
+                entity.CellPhone = model.CellPhone;
+                entity.DateOfBirth = model.DateOfBirth;
+                entity.Address = model.Address;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.Zip = model.Zip;
+                entity.SeniorPastor = model.SeniorPastor;
+                entity.AssistantPastor = model.AssistantPastor;
+                entity.YouthPastor = model.YouthPastor;
+                entity.SongLeader = model.SongLeader;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
     }
 }
