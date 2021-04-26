@@ -63,11 +63,13 @@ namespace MinistryPlanner.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
             var service = CreatePastorService();
             var detail = service.GetPastorById(id);
             var model =
                 new PastorEdit
                 {
+                    FirstName = detail.FirstName,
                     MiddleName = detail.MiddleName,
                     LastName = detail.LastName,
                     Email = detail.Email,
@@ -85,6 +87,30 @@ namespace MinistryPlanner.WebMVC.Controllers
                 }; 
             return View(model);
             }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PastorEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.IndividualId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreatePastorService();
+
+            if (service.UpdatePastor(model))
+            {
+                TempData["SaveResult"] = "Your pastor record was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your pastor record could not be updated.");
+            return View(model);
+        }
 
         private static PastorService CreatePastorService()
         {

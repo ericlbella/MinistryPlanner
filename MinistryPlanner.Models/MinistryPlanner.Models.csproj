@@ -83,6 +83,7 @@
     <Compile Include="Church\ChurchCreate.cs" />
     <Compile Include="Church\ChurchListItem.cs" />
     <Compile Include="IndividualListItem.cs" />
+    <Compile Include="Parishoner\ParishonerEdit.cs" />
     <Compile Include="Parishoner\ParishonerDetial.cs" />
     <Compile Include="Parishoner\ParishonerCreate.cs" />
     <Compile Include="Parishoner\ParishonerListItem.cs" />

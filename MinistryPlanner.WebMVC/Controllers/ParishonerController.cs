@@ -78,6 +78,20 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateParishonerService();
+            var detail = service.GetParishonerById(id);
+            var model =
+                new ParishonerEdit
+                {
+                    NoteId = detail.NoteId,
+                    Title = detail.Title,
+                    Content = detail.Content
+                };
+            return View(model);
+        }
+
         private static ParishonerService CreateParishonerService()
         {
             return new ParishonerService();

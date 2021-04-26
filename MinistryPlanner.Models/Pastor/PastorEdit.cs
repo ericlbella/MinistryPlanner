@@ -11,6 +11,8 @@ namespace MinistryPlanner.Models
     public class PastorEdit
     {
         public int IndividualId { get; set; }
+        [Display(Name = "Church Name")]
+        public int ChurchId { get; set; }
         public string Name { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
@@ -42,6 +44,5 @@ namespace MinistryPlanner.Models
         public bool YouthPastor { get; set; }
         [Required]
         public bool SongLeader { get; set; }
-        [Display(Name = "Created")]
     }
 }

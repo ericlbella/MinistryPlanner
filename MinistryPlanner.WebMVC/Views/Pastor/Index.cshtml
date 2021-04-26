@@ -52,37 +52,38 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MiddleName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SeniorPastor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AssistantPastor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YouthPastor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SongLeader)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.IndividualId })|
-                @Html.ActionLink("Details", "Details", new { id = item.IndividualId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IndividualId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MiddleName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SeniorPastor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AssistantPastor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.YouthPastor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SongLeader)
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedUtc)
+    </td>
+
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.IndividualId })|
+        @Html.ActionLink("Details", "Details", new { id = item.IndividualId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.IndividualId })
+    </td>
+</tr>
     }
 
 </table>

@@ -99,5 +99,34 @@ namespace MinistryPlanner.Services
             }
 
         }
+
+        public bool UpdateParishoner(ParishonerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Parishoners
+                        .Single(e => e.IndividualId == model.IndividualId);
+                
+                entity.ChurchId = model.ChurchId;
+                entity.FirstName = model.FirstName;
+                entity.MiddleName = model.MiddleName;
+                entity.LastName = model.LastName;
+                entity.Email = model.Email;
+                entity.HomePhone = model.HomePhone;
+                entity.CellPhone = model.CellPhone;
+                entity.DateOfBirth = model.DateOfBirth;
+                entity.Address = model.Address;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.Zip = model.Zip;
+                entity.Officer = model.Officer;
+                entity.OfficerTitle = model.OfficerTitle;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

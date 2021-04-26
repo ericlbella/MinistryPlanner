@@ -119,6 +119,7 @@ namespace MinistryPlanner.Services
                         .Pastors
                         .Single (e => e.IndividualId == model.IndividualId);
 
+                entity.ChurchId = model.ChurchId;
                 entity.FirstName = model.FirstName;
                 entity.MiddleName = model.MiddleName;
                 entity.LastName = model.LastName;
