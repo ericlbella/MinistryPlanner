@@ -1,4 +1,4 @@
-﻿@model MinistryPlanner.Models.PastorEdit
+﻿@model MinistryPlanner.Models.ParishonerEdit
 
 @{
     ViewBag.Title = "Edit";
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>PastorEdit</h4>
+    <h4>ParishonerEdit</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.IndividualId)
@@ -122,42 +122,20 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.SeniorPastor, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Officer, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.EditorFor(model => model.SeniorPastor)
-                @Html.ValidationMessageFor(model => model.SeniorPastor, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Officer)
+                @Html.ValidationMessageFor(model => model.Officer, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.AssistantPastor, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.OfficerTitle, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.AssistantPastor)
-                @Html.ValidationMessageFor(model => model.AssistantPastor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.YouthPastor, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.YouthPastor)
-                @Html.ValidationMessageFor(model => model.YouthPastor, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.SongLeader, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.SongLeader)
-                @Html.ValidationMessageFor(model => model.SongLeader, "", new { @class = "text-danger" })
-            </div>
+            @Html.EditorFor(model => model.OfficerTitle, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OfficerTitle, "", new { @class = "text-danger" })
         </div>
     </div>
 

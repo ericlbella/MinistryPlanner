@@ -80,15 +80,50 @@ namespace MinistryPlanner.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
             var service = CreateParishonerService();
             var detail = service.GetParishonerById(id);
             var model =
                 new ParishonerEdit
                 {
-                    NoteId = detail.NoteId,
-                    Title = detail.Title,
-                    Content = detail.Content
+                    FirstName = detail.FirstName,
+                    MiddleName = detail.MiddleName,
+                    LastName = detail.LastName,
+                    Email = detail.Email,
+                    HomePhone = detail.HomePhone,
+                    CellPhone = detail.CellPhone,
+                    DateOfBirth = detail.DateOfBirth,
+                    Address = detail.Address,
+                    City = detail.City,
+                    State = detail.State,
+                    Zip = detail.Zip,
+                    Officer = detail.Officer,
+                    OfficerTitle = detail.OfficerTitle
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ParishonerEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.IndividualId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateParishonerService();
+
+            if (service.UpdateParishoner(model))
+            {
+                TempData["SaveResult"] = "Your parishoner record was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your parishoner record could not be updated.");
             return View(model);
         }
 
