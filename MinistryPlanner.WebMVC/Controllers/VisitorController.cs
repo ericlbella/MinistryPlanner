@@ -54,6 +54,14 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateVisitorService();
+            var model = svc.GetVisitorById(id);
+
+            return View(model);
+        }
+
         private static VisitorService CreateVisitorService()
         {
             return new VisitorService();

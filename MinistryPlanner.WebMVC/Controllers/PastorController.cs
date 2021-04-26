@@ -53,7 +53,13 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreatePastorService();
+            var model = svc.GetPastorById(id);
 
+            return View(model);
+        }
 
 
         private static PastorService CreatePastorService()

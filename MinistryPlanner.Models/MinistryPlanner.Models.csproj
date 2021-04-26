@@ -89,6 +89,7 @@
     <Compile Include="Pastor\PastorCreate.cs" />
     <Compile Include="Pastor\PastorListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visitor\VisitorDetail.cs" />
     <Compile Include="Visitor\VisitorCreate.cs" />
     <Compile Include="Visitor\VisitorListItem.cs" />
   </ItemGroup>

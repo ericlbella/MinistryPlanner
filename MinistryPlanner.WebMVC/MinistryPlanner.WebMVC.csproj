@@ -253,6 +253,7 @@
     <Content Include="Views\Visitor\Create.cshtml" />
     <Content Include="Views\Church\Details.cshtml" />
     <Content Include="Views\Parishoner\Details.cshtml" />
+    <Content Include="Views\Pastor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
