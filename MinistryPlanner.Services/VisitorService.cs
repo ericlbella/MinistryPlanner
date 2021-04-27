@@ -136,7 +136,8 @@ namespace MinistryPlanner.Services
                         .Visitors
                         .Single(e => e.IndividualId == IndividualId);
 
-                ctx.Visitors.Remove(entity);
+                ctx.Visitors                 
+                    .Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
