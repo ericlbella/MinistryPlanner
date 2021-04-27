@@ -11,7 +11,8 @@ namespace MinistryPlanner.Models
 {
     public class ParishonerDetail
     {
-        //public int IndividualId { get; set; }
+        public int ChurchId { get; set; }
+        public int IndividualId { get; set; }
         //[ForeignKey("Church")]
         //public int ChurchId { get; set; }
         //public virtual Church Church { get; set; }

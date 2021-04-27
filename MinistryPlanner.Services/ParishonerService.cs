@@ -78,8 +78,8 @@ namespace MinistryPlanner.Services
                     new ParishonerDetail
                     {
                         Name = entity.Church.Name,
-                        //IndividualId = entity.IndividualId,
-                        //ChurchId = entity.ChurchId,
+                        IndividualId = entity.IndividualId,
+                        ChurchId = entity.ChurchId,
                         FirstName = entity.FirstName,
                         MiddleName = entity.MiddleName,
                         LastName = entity.LastName,

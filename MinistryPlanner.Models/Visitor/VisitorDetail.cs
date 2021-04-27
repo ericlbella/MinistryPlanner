@@ -10,6 +10,8 @@ namespace MinistryPlanner.Models
 {
     public class VisitorDetail
     {
+        public int IndividualId { get; set; }
+        public int ChurchId { get; set; }
         public string Name { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]

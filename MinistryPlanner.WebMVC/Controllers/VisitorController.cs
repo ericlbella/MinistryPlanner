@@ -64,11 +64,14 @@ namespace MinistryPlanner.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
             var service = CreateVisitorService();
             var detail = service.GetVisitorById(id);
             var model =
                 new VisitorEdit
                 {
+                    IndividualId = detail.IndividualId,
+                    ChurchId = detail.ChurchId,
                     FirstName = detail.FirstName,
                     MiddleName = detail.MiddleName,
                     LastName = detail.LastName,
@@ -82,6 +85,35 @@ namespace MinistryPlanner.WebMVC.Controllers
                     Zip = detail.Zip,
                     DateVisited = detail.DateVisited
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, VisitorEdit model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
+                return View(model);
+            }
+
+            if (model.IndividualId != id)
+            {
+                ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateVisitorService();
+
+            if (service.UpdateVisitor(model))
+            {
+                TempData["SaveResult"] = "Your visitor record was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your visitor record could not be updated.");
             return View(model);
         }
 

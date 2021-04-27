@@ -120,5 +120,20 @@ namespace MinistryPlanner.Services
             }
         }
 
+        public bool DeleteChurch(int ChurchId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Churches
+                        .Single(e => e.ChurchId == ChurchId);
+
+                ctx.Churches.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

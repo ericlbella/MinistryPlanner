@@ -69,6 +69,8 @@ namespace MinistryPlanner.WebMVC.Controllers
             var model =
                 new PastorEdit
                 {
+                    IndividualId = detail.IndividualId,
+                    ChurchId = detail.ChurchId,
                     FirstName = detail.FirstName,
                     MiddleName = detail.MiddleName,
                     LastName = detail.LastName,
@@ -92,10 +94,15 @@ namespace MinistryPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, PastorEdit model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
+                return View(model);
+            }
 
             if (model.IndividualId != id)
             {
+                ViewBag.Churches = new SelectList(DbContext.Churches.ToList(), "ChurchId", "Name");
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }

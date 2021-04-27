@@ -13,7 +13,7 @@ namespace MinistryPlanner.Models
         public int IndividualId { get; set; }
         [Display(Name = "Church Name")]
         public int ChurchId { get; set; }
-        public string Name { get; set; }
+        //public string Name { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         public string FirstName { get; set; }

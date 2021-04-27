@@ -100,6 +100,29 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete (int id)
+        {
+            var svc = CreateChurchService();
+            var model = svc.GetChurchById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateChurchService();
+
+            service.DeleteChurch(id);
+
+            TempData["SaveResult"] = "Your church record was deleted";
+
+            return RedirectToAction("Index");
+        }
+
         private ChurchService CreateChurchService()
         {
             var userId = Convert.ToString(User.Identity.GetUserId());
