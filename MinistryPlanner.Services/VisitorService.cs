@@ -122,10 +122,23 @@ namespace MinistryPlanner.Services
                 entity.DateVisited = model.DateVisited;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
-
-
                 return ctx.SaveChanges() == 1;
 
+            }
+        }
+
+        public bool DeleteVisitor(int IndividualId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Visitors
+                        .Single(e => e.IndividualId == IndividualId);
+
+                ctx.Visitors.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

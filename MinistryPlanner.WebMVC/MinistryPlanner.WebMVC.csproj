@@ -260,6 +260,9 @@
     <Content Include="Views\Parishoner\Edit.cshtml" />
     <Content Include="Views\Visitor\Edit.cshtml" />
     <Content Include="Views\Church\Delete.cshtml" />
+    <Content Include="Views\Pastor\Delete.cshtml" />
+    <Content Include="Views\Parishoner\Delete.cshtml" />
+    <Content Include="Views\Visitor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

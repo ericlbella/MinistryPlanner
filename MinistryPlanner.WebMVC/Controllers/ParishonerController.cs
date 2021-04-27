@@ -134,6 +134,28 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateParishonerService();
+            var model = svc.GetParishonerById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateParishonerService();
+
+            service.DeleteParishoner(id);
+
+            TempData["SaveResult"] = "Your parishoner record was deleted";
+
+            return RedirectToAction("Index");
+        }
         private static ParishonerService CreateParishonerService()
         {
             return new ParishonerService();

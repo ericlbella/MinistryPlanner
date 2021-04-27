@@ -117,6 +117,29 @@ namespace MinistryPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateVisitorService();
+
+            service.DeleteVisitor(id);
+
+            TempData["SaveResult"] = "Your visitor record was deleted";
+
+            return RedirectToAction("Index");
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateVisitorService();
+            var model = svc.GetVisitorById(id);
+
+            return View(model);
+        }
+
         private static VisitorService CreateVisitorService()
         {
             return new VisitorService();

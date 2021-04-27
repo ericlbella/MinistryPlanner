@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace MinistryPlanner.Services
 {
@@ -143,5 +144,28 @@ namespace MinistryPlanner.Services
 
             }
         }
+
+        public bool DeletePastor(int IndividualId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Pastors
+                        .Single(e => e.IndividualId == IndividualId);
+
+                ctx.Pastors.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        private static PastorService CreatePastorService()
+        {
+            return new PastorService();
+        }
+
+
     }
+
 }

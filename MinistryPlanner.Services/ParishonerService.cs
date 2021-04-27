@@ -128,5 +128,20 @@ namespace MinistryPlanner.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteParishoner(int IndividualId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Parishoners
+                        .Single(e => e.IndividualId == IndividualId);
+
+                ctx.Parishoners.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
