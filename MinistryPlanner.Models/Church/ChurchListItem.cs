@@ -9,11 +9,13 @@ namespace MinistryPlanner.Models
 {
     public class ChurchListItem
     {
+        [Display(Name = "Church Id")]
         public int ChurchId { get; set; }
         //public Guid OwnerId { get; set; }
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
+        [Display(Name = "Church Name")]
         public string Name { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }

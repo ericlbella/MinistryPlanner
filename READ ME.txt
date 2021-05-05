@@ -1,0 +1,77 @@
+Overview
+--------
+An application built in .NET Framework MVC 5 with n-tier architecture with a SQL Server database, back end.  The application is made to allow churches
+and specifically pastors to keep track of information on the church, pastor, parishoner, and visitrs.
+
+User-Story
+----------
+As an adjunct to planning and wire-framing a user story was created to guide the development of the Ministry Planner.
+
+Pastor Aaron wants a database system that will assist in capturing data on his church so that he may closely track visitgors so that he may visit
+them and discuss if they would like to pursue membership with the church.  He also would like to be able to know who is currently a member of the church
+so that he may keep a close connection with them.  Further, he would like to maintain data on the church building so that he can share the information with
+other churches.
+
+Technologies Employed
+---------------------
+- Visual Studio Community 2019
+- MVC5
+-n-tier architecture
+- SQL Server
+- CSharp
+
+Installation and Setup
+----------------------
+Requirements: Visual Studio and web browser
+
+Create a new folder where you would like the project and associated files to be located.
+
+Instructions
+------------
+Upon starting the application the individual using the application must click on the Register button in the top right corner of the application.
+
+Create a new user with the following steps:
+1. Click on the Register link to get to the registration page
+2. Complete the registration form.
+3. Click the Regiester button to gain access to the system.
+
+Church:
+1. If you would like to create a new church record, edit a church record, or delete a church record click on the Churches link.
+2. Click on the Create New link and complete the form you are taken to in order to create a church record.
+3. If you want to edit a church record click on the edit link for the record you want to edit.  Complete the form you are taken to and click the Save button.
+4. To view the complete details for a church click on the Details link for the record you want details on.  You can choose to edit details from the screen you are brought to
+   or you may click the Back to List link to be taken back to the Church main page.
+5. If you woul5d like to delete a record, click on the Delete link for the record you want to delete.  When you are on the Delete page click the Delete button to delete the record.
+   If you do not want to delete the record click on Back to List to be returned to the Churches main page.
+
+Pastor:
+1. If you would like to create a new pastor record, edit a pastor record, or delete a pastor record click on the Pastors link.
+2. Click  the Create New link and complete the form you are taken to in order to create a pastor record.
+3. If you want to edit a pastor record click on the edit link for the record you want to edit.  Complete the form you are taken to and click the Save button.
+4. To view the complete details for a church click on the Details link for the record you want details on.  You can choose to edit details from the screen you are brought to
+   or you may click the Back to List link to be taken back to the Pastor main page.
+5. If you would like to delete a record, click on the Delete link for the record you want to delete.  When you are on the Delete page click the Delete button to delete the record.
+   If you do not want to delete the record click on Back to List to be returned to the Pastors main page.
+
+Parishoner:
+1. If you would like to create a new parishoner record, edit a parishoner record, or delete a parishoner record click on the Parishoners link.
+2. Click  the Create New link and complete the form you are taken to in order to create a parishoner record.
+3. If you want to edit a parishoner record click on the edit link for the record you want to edit.  Complete the form you are taken to and click the Save button.
+4. To view the complete details for a parsishoner click on the Details link for the record you want details on.  You can choose to edit details from the screen you are brought to
+   or you may click the Back to List link to be taken back to the Parishoner main page.
+5. If you would like to delete a record, click on the Delete link for the record you want to delete.  When you are on the Delete page click the Delete button to delete the record.
+   If you do not want to delete the record click on Back to List to be returned to the Parishoner main page.
+
+Visitor:
+1. If you would like to create a new vistior record, edit a visitor record, or delete a visitor record click on the Visitors link.
+2. Click  the Create New link and complete the form you are taken to in order to create a visitor record.
+3. If you want to edit a visitor record click on the edit link for the record you want to edit.  Complete the form you are taken to and click the Save button.
+4. To view the complete details for a visitor click on the Details link for the record you want details on.  You can choose to edit details from the screen you are brought to
+   or you may click the Back to List link to be taken back to the Visitor main page.
+5. If you would like to delete a record, click on the Delete link for the record you want to delete.  When you are on the Delete page click the Delete button to delete the record.
+   If you do not want to delete the record click on Back to List to be returned to the Parishoner main page.
+
+Resource:
+https://www.youtube.com/watch?v=mU6anWqZJcc&t=31887s = Learn HTML5 and CSS3 from Scratch
+
+Azure link: https://ministryplannerwebmvc.azurewebsites.net/

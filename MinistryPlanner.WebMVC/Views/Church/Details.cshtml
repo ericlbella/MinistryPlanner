@@ -5,110 +5,111 @@
 }
 
 <h2>Details</h2>
+<body style="background-color:aqua;">
 
-<div>
-    <h4>ChurchDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ChurchId)
-        </dt>
+    <div>
+        <h4>ChurchDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ChurchId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ChurchId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ChurchId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumberMembers)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumberMembers)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumberMembers)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.NumberMembers)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.State)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.State)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Zip)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Zip)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Zip)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Zip)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Denomination)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Denomination)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Denomination)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Denomination)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedUtc)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedUtc)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ModifiedUtc)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifiedUtc)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ModifiedUtc)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ModifiedUtc)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ChurchId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ChurchId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>

@@ -25,7 +25,7 @@ namespace MinistryPlanner.WebMVC.Controllers
 
         public ActionResult Create()
         {
-            return View();
+            return View(new ChurchCreate());
         }
 
         [HttpPost]

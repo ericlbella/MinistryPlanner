@@ -13,10 +13,13 @@ namespace MinistryPlanner.Models
         [Required]
         [MaxLength(20, ErrorMessage = "There are too many characters in this field.")]
         [MinLength(3, ErrorMessage = "Please enter at least 3 characters.")]
+        [Display(Name = "Church Name")]
         public string Name { get; set; }
-        
-        public int NumberMembers { get; set; }
+        [Display(Name = "Number of Members")]
+        public int NumberMembers { get; set; } = 0;
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required]
         [MaxLength(30, ErrorMessage = "There are too many characters in this field.")]
